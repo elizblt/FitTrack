@@ -1,0 +1,16 @@
+<ion-content>
+  <ion-button expand="full" [routerLink]="['/tabs/stats/history']">
+    Voir l'historique
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Analyse des Performances</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Moyenne : {{ average }} min</p>
+      <p>Max : {{ max }} min</p>
+      <p>Min : {{ min }} min</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,30 @@
+<form [formGroup]="exerciseForm" (ngSubmit)="addExercise()">
+  <ion-item>
+    <ion-label position="floating">Nom de l'exercice</ion-label>
+    <ion-input formControlName="name"></ion-input>
+  </ion-item>
+  <ion-note color="danger" *ngIf="exerciseForm.get('name')?.invalid && exerciseForm.get('name')?.touched">
+    Le nom est requis.
+  </ion-note>
+
+  <ion-item>
+    <ion-label position="floating">Durée (min)</ion-label>
+    <ion-input type="number" formControlName="duration"></ion-input>
+  </ion-item>
+  <ion-note color="danger" *ngIf="exerciseForm.get('duration')?.invalid && exerciseForm.get('duration')?.touched">
+    La durée doit être d'au moins 1 minute.
+  </ion-note>>
+
+  <ion-item>
+    <ion-label>Intensité</ion-label>
+    <ion-select formControlName="intensity">
+      <ion-select-option value="faible">Faible</ion-select-option>
+      <ion-select-option value="moyenne">Moyenne</ion-select-option>
+      <ion-select-option value="élevée">Élevée</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" type="submit" [disabled]="exerciseForm.invalid">Ajouter</ion-button>
+
+  <app-timer [duration]="exerciseForm.get('duration')?.value || 60"></app-timer>
+</form>

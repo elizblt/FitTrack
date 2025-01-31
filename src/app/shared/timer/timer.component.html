@@ -1,0 +1,11 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Timer</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <h1>{{ timeLeft }}s</h1>
+    <ion-button (click)="startTimer()" [disabled]="interval !== null">Démarrer</ion-button>
+    <ion-button (click)="pauseTimer()" [disabled]="interval === null">Pause</ion-button>
+    <ion-button (click)="resetTimer()">Réinitialiser</ion-button>
+  </ion-card-content>
+</ion-card>

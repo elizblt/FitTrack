@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Historique</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let workout of history$ | async">
+      {{ workout.name }} - {{ workout.date | date:'short' }}
+    </ion-item>
+  </ion-list>
+</ion-content>

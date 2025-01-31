@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card routerLink="/tabs/exercise">
+          <ion-card-header>
+            <ion-card-title>Nouvel Exercice</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card routerLink="/tabs/stats">
+          <ion-card-header>
+            <ion-card-title>Statistiques</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-card routerLink="/tabs/goals">
+          <ion-card-header>
+            <ion-card-title>Objectifs</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let workout of workouts$ | async">
+      {{ workout.name }} - {{ workout.date | date:'short' }}
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="scheduleReminder()">Planifier un rappel</ion-button>
+
+</ion-content>
